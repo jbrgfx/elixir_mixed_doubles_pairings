@@ -29,8 +29,6 @@ defmodule MixedDoubles do
      {:name, "Chris", :gender, "M"}];
   end
 
-  # TODO: get size of each list and compare the two counts and
-  #       take approp nmbr (8, 6, 4, 2) of the smaller list
   def countFemales do
     Enum.count(females())
   end

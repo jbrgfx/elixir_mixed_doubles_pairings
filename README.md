@@ -20,5 +20,4 @@ The elixir version is functionally incomplete but identical to the javascript ve
 
 ### TODO:
 
-  ##### Pair the two, shuffled lists of players to form teams
   ##### Assign teams to courts

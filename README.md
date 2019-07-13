@@ -1,6 +1,7 @@
 # Mixeddoubles
 
 Purpose: Build mixed doubles randomly paired rosters for as many as four courts from lists of registered players.
+The elixir version is functionally incomplete but identical to the javascript version, as far as it goes.
 
 ## running using iex
 

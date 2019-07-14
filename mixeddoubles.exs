@@ -29,6 +29,8 @@ defmodule MixedDoubles do
      {:name, "Chris", :gender, "M"}];
   end
 
+  # TODO: get size of each list and compare the two counts and
+  #       take approp nmbr (8, 6, 4, 2) of the smaller list
   def countFemales do
     Enum.count(females())
   end
@@ -59,12 +61,10 @@ defmodule MixedDoubles do
   end
 
   def shuffleFemales do
-    IO.puts(lesserCount())
     females() |> Enum.take(numberOfTeams()) |> Enum.shuffle()
   end
 
   def shuffleMales do
-    IO.puts(lesserCount())
     males() |> Enum.take(numberOfTeams()) |> Enum.shuffle()
   end
 
@@ -108,7 +108,47 @@ defmodule MixedDoubles do
     end
   end
 
-  # TODO: assign teams to courts
+  # init via iex using
+  # iex(1)> players = MixedDoubles.assignTeams
+  def assignTeams do
+    players = combinePlayers()
+
+    team1 = Enum.slice(players,0,2)
+    team2 = Enum.slice(players,2,2)
+    team3 = Enum.slice(players,4,2)
+    team4 = Enum.slice(players,6,2)
+    team5 = Enum.slice(players,8,2)
+    team6 = Enum.slice(players,10,2)
+    team7 = Enum.slice(players,12,2)
+    team8 = Enum.slice(players,14,2)
+
+    IO.puts("\nCourt 1")
+    IO.puts("Team 1:")
+    IO.inspect(team1)
+    IO.puts("VS")
+    IO.puts("Team 2:")
+    IO.inspect(team2)
+    IO.puts("\nCourt 2")
+    IO.puts("Team 1:")
+    IO.inspect(team3)
+    IO.puts("VS")
+    IO.puts("Team 2:")
+    IO.inspect(team4)
+    IO.puts("\nCourt 3")
+    IO.puts("Team 1:")
+    IO.inspect(team5)
+    IO.puts("VS")
+    IO.puts("Team 2:")
+    IO.inspect(team6)
+    IO.puts("\nCourt 4")
+    IO.puts("Team 1:")
+    IO.inspect(team7)
+    IO.puts("VS")
+    IO.puts("Team 2:")
+    IO.inspect(team8)
+    IO.puts("\n")
+  end
+
 
   # take remainder and add to waitlist
   def femalesWaitlist do

@@ -8,16 +8,16 @@ The elixir version is functionally incomplete but identical to the javascript ve
     λ iex mixeddoubles.exs
     λ iex --werl mixeddoubles.exs (on windows to get tab-completion in the erlang terminal)
 
-## shuffle each gender
+    iex(1) players = MixedDoubles.assignTeams
 
-    iex(1)> MixedDoubles.shuffleFemales
-    iex(2)> MixedDoubles.shuffleMales
-
-## construct waitlists
+#### construct waitlists
 
     iex(3)> MixedDoubles.femalesWaitlist
     iex(4)> MixedDoubles.malesWaitlist
 
+
 ### TODO:
 
-  ##### Assign teams to courts
+  ##### Add a function to increment team number and index for assigning teams
+  ##### Add a function to format printing to the terminal
+  Both of these are currently done verbosely.

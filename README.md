@@ -21,10 +21,3 @@ The elixir version is functionally identical to the javascript version.
 
     iex(3)> MixedDoubles.femalesWaitlist
     iex(4)> MixedDoubles.malesWaitlist
-
-
-### TODO:
-
-  ##### Add a function to increment team number and index for assigning teams
-  ##### Add a function to format printing to the terminal
-  Both of these are currently done verbosely.

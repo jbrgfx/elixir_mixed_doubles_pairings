@@ -7,7 +7,7 @@ The elixir version is functionally identical to the javascript version.
 ## running using iex
 
     λ iex mixeddoubles.exs
-    λ iex --werl mixeddoubles.exs (on windows to get tab-completion in the erlang terminal)
+    λ iex --werl -S mix (on windows to get tab-completion in the erlang terminal)
     
     Assign teams to courts and print waitlists:
     

@@ -62,12 +62,10 @@ defmodule MixedDoubles do
   end
 
   def shuffleFemales do
-    # IO.puts(lesserCount())
     females() |> Enum.take(numberOfTeams()) |> Enum.shuffle()
   end
 
   def shuffleMales do
-    # IO.puts(lesserCount())
     males() |> Enum.take(numberOfTeams()) |> Enum.shuffle()
   end
 

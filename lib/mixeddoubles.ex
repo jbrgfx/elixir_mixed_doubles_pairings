@@ -70,7 +70,8 @@ defmodule MixedDoubles do
   end
 
   def assignTeams do
-    shuffleFemales() |> Enum.zip(shuffleMales())
+    players = shuffleFemales() |> Enum.zip(shuffleMales())
+    PhStTransform.transform(players, %{Tuple => fn tuple -> Tuple.to_list(tuple) end})
   end
 
   # take remainder and add to waitlist

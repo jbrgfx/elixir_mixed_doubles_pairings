@@ -13,7 +13,60 @@ The elixir version is functionally superior to the javascript version.
     
     Assign teams to courts and print waitlists:
     
-    iex(1) MixedDoubles.assignCourts 
+    iex(1) MixedDoubles.assignCourts
+        +----------------------+
+    |       Court 1        |
+    +------+--------+------+
+    |      | Ladies | Men  |
+    +------+--------+------+
+    | Team | Alice  | Jim  |
+    | Team | Carol  | John |
+    +------+--------+------+
+
+    +------------------------+
+    |        Court 2         |
+    +------+---------+-------+
+    |      | Ladies  | Men   |
+    +------+---------+-------+
+    | Team | Dorothy | Kevin |
+    | Team | Beth    | Jim   |
+    +------+---------+-------+
+
+    +-----------------------+
+    |        Court 3        |
+    +------+--------+-------+
+    |      | Ladies | Men   |
+    +------+--------+-------+
+    | Team | Alice  | Jim   |
+    | Team | Kelly  | Rocky |
+    +------+--------+-------+
+
+    +-----------------------+
+    |        Court 4        |
+    +------+--------+-------+
+    |      | Ladies | Men   |
+    +------+--------+-------+
+    | Team | Jane   | Dave  |
+    | Team | Lynda  | Kevin |
+    +------+--------+-------+
+
+    +----------------+
+    | Ladies Waiting |
+    +----------------+
+    | Molly          |
+    | Polly          |
+    | Joan           |
+    +----------------+
+
+    +-------------+
+    | Men Waiting |
+    +-------------+
+    | Jon         |
+    | Kelly       |
+    | Peter       |
+    | Chris       |
+    +-------------+
+
 
 #### assign Teams 
 

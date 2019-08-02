@@ -14,7 +14,7 @@ The elixir version is functionally superior to the javascript version.
     Assign teams to courts and print waitlists:
     
     iex(1) MixedDoubles.assignCourts
-        +----------------------+
+    +----------------------+
     |       Court 1        |
     +------+--------+------+
     |      | Ladies | Men  |

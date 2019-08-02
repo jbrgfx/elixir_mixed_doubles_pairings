@@ -71,7 +71,8 @@ defmodule MixedDoubles do
 
   def assignTeams do
     players = shuffleFemales() |> Enum.zip(shuffleMales())
-    PhStTransform.transform(players, %{Tuple => fn tuple -> Tuple.to_list(tuple) end})
+    pl = PhStTransform.transform(players, %{Tuple => fn tuple -> Tuple.to_list(tuple) end})
+    for n <- pl, do: ["Team"] ++ n
   end
 
   # take remainder and add to waitlist
@@ -105,28 +106,28 @@ defmodule MixedDoubles do
 
   def assignCourts do
     title = "Court 1"
-    header = ["Ladies", "Men"]
+    header = ["", "Ladies", "Men"]
     court1 = Enum.slice(assignTeams(), 0..1)
 
     TableRex.quick_render!(court1, header, title)
     |> IO.puts()
 
     title = "Court 2"
-    header = ["Ladies", "Men"]
+    header = ["", "Ladies", "Men"]
     court2 = Enum.slice(assignTeams(), 2..3)
 
     TableRex.quick_render!(court2, header, title)
     |> IO.puts()
 
     title = "Court 3"
-    header = ["Ladies", "Men"]
+    header = ["", "Ladies", "Men"]
     court3 = Enum.slice(assignTeams(), 4..5)
 
     TableRex.quick_render!(court3, header, title)
     |> IO.puts()
 
     title = "Court 4"
-    header = ["Ladies", "Men"]
+    header = ["", "Ladies", "Men"]
     court4 = Enum.slice(assignTeams(), 6..7)
 
     TableRex.quick_render!(court4, header, title)

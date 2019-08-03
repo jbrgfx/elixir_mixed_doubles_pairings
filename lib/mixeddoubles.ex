@@ -56,9 +56,18 @@ defmodule MixedDoubles do
   # waitlists and to set the number of players
   # to shuffle
   def numberOfTeams do
-    divisible_by_4? = fn n -> rem(n, 4) == 0 end
-    teams = for n <- 1..lesserCount(), divisible_by_4?.(n), do: n
-    _maxTeams = Enum.max(teams)
+    cond do
+      lesserCount() >= 4 ->
+        divisible_by_4? = fn n -> rem(n, 4) == 0 end
+        teams = for n <- 4..lesserCount(), divisible_by_4?.(n), do: n
+        _maxTeams = Enum.max(teams)
+
+      lesserCount() == 3 ->
+        _maxTeams = 2
+
+      lesserCount() <= 1 ->
+        IO.puts("Insufficient players for mixed doubles")
+    end
   end
 
   def shuffleFemales do

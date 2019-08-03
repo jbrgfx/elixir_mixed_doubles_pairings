@@ -83,11 +83,17 @@ defmodule MixedDoubles do
   end
 
   def femaleWaitlist do
-    header = ["Ladies Waiting"]
-    rows = femalesWaiting()
+    cond do
+      Enum.count(femalesWaiting()) >= 1 ->
+        header = ["Ladies Waiting"]
+        rows = femalesWaiting()
 
-    TableRex.quick_render!(rows, header)
-    |> IO.puts()
+        TableRex.quick_render!(rows, header)
+        |> IO.puts()
+
+      Enum.count(femalesWaiting()) == 0 ->
+        IO.puts("No Ladies waiting")
+    end
   end
 
   def malesWaiting do

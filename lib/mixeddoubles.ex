@@ -104,34 +104,82 @@ defmodule MixedDoubles do
     |> IO.puts()
   end
 
-  def assignCourts do
-    title = "Court 1"
-    header = ["", "Ladies", "Men"]
-    court1 = Enum.slice(assignTeams(), 0..1)
+def assignCourts do
+    cond do
+      numberOfTeams() == 8 ->
+        title = "Court 1"
+        header = ["", "Ladies", "Men"]
+        court1 = Enum.slice(assignTeams(), 0..1)
 
-    TableRex.quick_render!(court1, header, title)
-    |> IO.puts()
+        TableRex.quick_render!(court1, header, title)
+        |> IO.puts()
 
-    title = "Court 2"
-    header = ["", "Ladies", "Men"]
-    court2 = Enum.slice(assignTeams(), 2..3)
+        title = "Court 2"
+        header = ["", "Ladies", "Men"]
+        court2 = Enum.slice(assignTeams(), 2..3)
 
-    TableRex.quick_render!(court2, header, title)
-    |> IO.puts()
+        TableRex.quick_render!(court2, header, title)
+        |> IO.puts()
 
-    title = "Court 3"
-    header = ["", "Ladies", "Men"]
-    court3 = Enum.slice(assignTeams(), 4..5)
+        title = "Court 3"
+        header = ["", "Ladies", "Men"]
+        court3 = Enum.slice(assignTeams(), 4..5)
 
-    TableRex.quick_render!(court3, header, title)
-    |> IO.puts()
+        TableRex.quick_render!(court3, header, title)
+        |> IO.puts()
 
-    title = "Court 4"
-    header = ["", "Ladies", "Men"]
-    court4 = Enum.slice(assignTeams(), 6..7)
+        title = "Court 4"
+        header = ["", "Ladies", "Men"]
+        court4 = Enum.slice(assignTeams(), 6..7)
 
-    TableRex.quick_render!(court4, header, title)
-    |> IO.puts()
+        TableRex.quick_render!(court4, header, title)
+        |> IO.puts()
+
+      numberOfTeams() == 6 ->
+        title = "Court 1"
+        header = ["", "Ladies", "Men"]
+        court1 = Enum.slice(assignTeams(), 0..1)
+
+        TableRex.quick_render!(court1, header, title)
+        |> IO.puts()
+
+        title = "Court 2"
+        header = ["", "Ladies", "Men"]
+        court2 = Enum.slice(assignTeams(), 2..3)
+
+        TableRex.quick_render!(court2, header, title)
+        |> IO.puts()
+
+        title = "Court 3"
+        header = ["", "Ladies", "Men"]
+        court3 = Enum.slice(assignTeams(), 4..5)
+
+        TableRex.quick_render!(court3, header, title)
+        |> IO.puts()
+
+      numberOfTeams() == 4 ->
+        title = "Court 1"
+        header = ["", "Ladies", "Men"]
+        court1 = Enum.slice(assignTeams(), 0..1)
+
+        TableRex.quick_render!(court1, header, title)
+        |> IO.puts()
+
+        title = "Court 2"
+        header = ["", "Ladies", "Men"]
+        court2 = Enum.slice(assignTeams(), 2..3)
+
+        TableRex.quick_render!(court2, header, title)
+        |> IO.puts()
+
+      numberOfTeams() == 2 ->
+        title = "Court 1"
+        header = ["", "Ladies", "Men"]
+        court1 = Enum.slice(assignTeams(), 0..1)
+
+        TableRex.quick_render!(court1, header, title)
+        |> IO.puts()
+    end
 
     femaleWaitlist()
     maleWaitlist()

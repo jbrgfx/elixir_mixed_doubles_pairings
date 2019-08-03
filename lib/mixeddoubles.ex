@@ -56,7 +56,7 @@ defmodule MixedDoubles do
   # waitlists and to set the number of players
   # to shuffle
   def numberOfTeams do
-    divisible_by_4? = fn n -> rem(n, 4) == 0 end
+    divisible_by_2? = fn n -> rem(n, 2) == 0 end
     teams = for n <- 1..lesserCount(), divisible_by_4?.(n), do: n
     _maxTeams = Enum.max(teams)
   end

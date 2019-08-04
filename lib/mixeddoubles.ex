@@ -166,32 +166,34 @@ defmodule MixedDoubles do
   Assigns teams to courts and prints rosters as well as waitlists
   """
   def assignCourts do
+    teams = assignTeams()
+
     cond do
       numberOfTeams() == 8 ->
         title = "Court 1"
         header = ["", "Ladies", "Men"]
-        court1 = Enum.slice(assignTeams(), 0..1)
+        court1 = Enum.slice(teams, 0..1)
 
         TableRex.quick_render!(court1, header, title)
         |> IO.puts()
 
         title = "Court 2"
         header = ["", "Ladies", "Men"]
-        court2 = Enum.slice(assignTeams(), 2..3)
+        court2 = Enum.slice(teams, 2..3)
 
         TableRex.quick_render!(court2, header, title)
         |> IO.puts()
 
         title = "Court 3"
         header = ["", "Ladies", "Men"]
-        court3 = Enum.slice(assignTeams(), 4..5)
+        court3 = Enum.slice(teams, 4..5)
 
         TableRex.quick_render!(court3, header, title)
         |> IO.puts()
 
         title = "Court 4"
         header = ["", "Ladies", "Men"]
-        court4 = Enum.slice(assignTeams(), 6..7)
+        court4 = Enum.slice(teams, 6..7)
 
         TableRex.quick_render!(court4, header, title)
         |> IO.puts()
@@ -199,21 +201,21 @@ defmodule MixedDoubles do
       numberOfTeams() == 6 ->
         title = "Court 1"
         header = ["", "Ladies", "Men"]
-        court1 = Enum.slice(assignTeams(), 0..1)
+        court1 = Enum.slice(teams, 0..1)
 
         TableRex.quick_render!(court1, header, title)
         |> IO.puts()
 
         title = "Court 2"
         header = ["", "Ladies", "Men"]
-        court2 = Enum.slice(assignTeams(), 2..3)
+        court2 = Enum.slice(teams, 2..3)
 
         TableRex.quick_render!(court2, header, title)
         |> IO.puts()
 
         title = "Court 3"
         header = ["", "Ladies", "Men"]
-        court3 = Enum.slice(assignTeams(), 4..5)
+        court3 = Enum.slice(teams, 4..5)
 
         TableRex.quick_render!(court3, header, title)
         |> IO.puts()
@@ -221,14 +223,14 @@ defmodule MixedDoubles do
       numberOfTeams() == 4 ->
         title = "Court 1"
         header = ["", "Ladies", "Men"]
-        court1 = Enum.slice(assignTeams(), 0..1)
+        court1 = Enum.slice(teams, 0..1)
 
         TableRex.quick_render!(court1, header, title)
         |> IO.puts()
 
         title = "Court 2"
         header = ["", "Ladies", "Men"]
-        court2 = Enum.slice(assignTeams(), 2..3)
+        court2 = Enum.slice(teams, 2..3)
 
         TableRex.quick_render!(court2, header, title)
         |> IO.puts()
@@ -236,7 +238,7 @@ defmodule MixedDoubles do
       numberOfTeams() == 2 ->
         title = "Court 1"
         header = ["", "Ladies", "Men"]
-        court1 = Enum.slice(assignTeams(), 0..1)
+        court1 = Enum.slice(teams, 0..1)
 
         TableRex.quick_render!(court1, header, title)
         |> IO.puts()

@@ -1,4 +1,17 @@
 defmodule MixedDoubles do
+  @moduledoc """
+  Creates random court assignments for mixed doubles pairings
+  with wait-lists for as many as four courts.
+
+  The release includes Elixir runtime and the Erlang VM for Windows.
+  To run the release in Windows,
+  open a CMD and execute:
+
+    demo_release\bin\demo.bat start_iex
+
+  Then create a roster using the main command:
+  iex(1) MixedDoubles.assignCourts
+  """
   def females do
     [
       "Alice",
@@ -32,18 +45,26 @@ defmodule MixedDoubles do
     ]
   end
 
+  @doc """
+  Counts female Players
+  """
   def countFemales do
     Enum.count(females())
   end
 
+  @doc """
+  Counts male Players
+  """
   def countMales do
     Enum.count(males())
   end
 
-  # used to limit the shuffle of female and males players
-  # and to set the index for setting up waitlists
-  # this ensures that pairings for each team will be mixed
-  # -- each pair must have one female and one male
+  @doc """
+  limits the shuffle of female and males players
+  and to set the index for setting up waitlists
+  this ensures that pairings for each team will be mixed
+  -- each pair must have one female and one male
+  """
   def lesserCount do
     cond do
       countMales() > countFemales() -> countFemales()
@@ -52,9 +73,11 @@ defmodule MixedDoubles do
     end
   end
 
-  # Enum.max returns the starting index as a const in
-  # waitlists and to set the number of players
-  # to shuffle
+  @doc """
+  Determines the number of teams for each round of Mixed Doubles
+  Enum.max returns the starting index as a constant used in
+  waitlists and to set the number of players to shuffle
+  """
   def numberOfTeams do
     cond do
       lesserCount() >= 4 ->
@@ -70,27 +93,41 @@ defmodule MixedDoubles do
     end
   end
 
+  @doc """
+  Rearranges female players randomly, excluding waitlists.
+  """
   def shuffleFemales do
     females() |> Enum.take(numberOfTeams()) |> Enum.shuffle()
   end
 
+  @doc """
+  Rearranges male players randomly, excluding waitlists.
+  """
   def shuffleMales do
     males() |> Enum.take(numberOfTeams()) |> Enum.shuffle()
   end
 
+  @doc """
+  Constructs teams of female and male players, excluding waitlists.
+  """
   def assignTeams do
     players = shuffleFemales() |> Enum.zip(shuffleMales())
     pl = PhStTransform.transform(players, %{Tuple => fn tuple -> Tuple.to_list(tuple) end})
     for n <- pl, do: ["Team"] ++ n
   end
 
-  # take remainder and add to waitlist
+  @doc """
+  identifies unpaired, female players
+  """
   def femalesWaiting do
     cntFemale = Enum.count(females())
     fw = Enum.slice(females(), numberOfTeams(), cntFemale)
     for n <- fw, do: [n]
   end
 
+  @doc """
+  adds unpaired, female players to a waitlist
+  """
   def femaleWaitlist do
     cond do
       Enum.count(femalesWaiting()) >= 1 ->
@@ -105,12 +142,18 @@ defmodule MixedDoubles do
     end
   end
 
+  @doc """
+  identifies unpaired, male players
+  """
   def malesWaiting do
     cntMale = Enum.count(males())
     mw = Enum.slice(males(), numberOfTeams(), cntMale)
     for n <- mw, do: [n]
   end
 
+  @doc """
+  adds unpaired, male players to a waitlist
+  """
   def maleWaitlist do
     cond do
       Enum.count(malesWaiting()) >= 1 ->
@@ -125,7 +168,10 @@ defmodule MixedDoubles do
     end
   end
 
-def assignCourts do
+  @doc """
+  Assigns teams to courts and prints rosters as well as waitlists
+  """
+  def assignCourts do
     cond do
       numberOfTeams() == 8 ->
         title = "Court 1"

@@ -2,8 +2,6 @@
 
 Purpose: Build mixed doubles randomly paired rosters for as many as four courts from lists of registered players.  Players who registered last and are left unpaired are assigned to wait-lists.
 
-The elixir version is functionally superior to the javascript version.
-
 ## running using iex
     Clone the repo and in the project directory:
     

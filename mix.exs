@@ -21,6 +21,7 @@ defmodule Mixeddoubles.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
+      {:csvlixir, "~> 2.0.3"},
       {:phst_transform, "~> 1.0"},
       {:table_rex, "~> 2.0.0"}
       # {:dep_from_hexpm, "~> 0.3.0"},

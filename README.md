@@ -6,8 +6,8 @@ Purpose: Build mixed doubles randomly paired rosters for as many as four courts 
     Clone the repo and in the project directory:
     
     λ mix deps.get
-    λ iex -S mix
-    λ iex --werl -S mix (on windows to get tab-completion in the erlang terminal)
+    λ iex -S mix mixed_doubles
+    λ iex --werl -S mix mixed_doubles (on windows to get tab-completion in the erlang terminal)
     
     Assign teams to courts and print waitlists:
     

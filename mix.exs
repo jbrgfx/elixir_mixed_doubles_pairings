@@ -8,7 +8,6 @@ defmodule Mixeddoubles.MixProject do
       elixir: "~> 1.9",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
-      releases: releases(),
       default_task: "mixed_doubles"
     ]
   end

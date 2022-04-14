@@ -4,11 +4,10 @@ defmodule Mixeddoubles.MixProject do
   def project do
     [
       app: :mixeddoubles,
-      version: "0.2.2",
-      elixir: "~> 1.9",
+      version: "0.2.0",
+      elixir: "~> 1.13",
       start_permanent: Mix.env() == :prod,
-      deps: deps(),
-      default_task: "mixed_doubles"
+      deps: deps()
     ]
   end
 

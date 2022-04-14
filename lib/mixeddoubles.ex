@@ -108,6 +108,7 @@ defmodule MixedDoubles do
   """
   def assignTeams do
     players = shuffleFemales() |> Enum.zip(shuffleMales())
+    # IO.inspect(players)
     pl = PhStTransform.transform(players, %{Tuple => fn tuple -> Tuple.to_list(tuple) end})
     for n <- pl, do: ["Team"] ++ n
   end

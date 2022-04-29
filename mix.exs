@@ -21,11 +21,9 @@ defmodule Mixeddoubles.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:csvlixir, "~> 2.0.3"},
-      {:phst_transform, "~> 1.0"},
-      {:table_rex, "~> 2.0.0"}
-      # {:dep_from_hexpm, "~> 0.3.0"},
-      # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
+      {:csvlixir, "~> 2.0.4"},
+      {:phst_transform, "~> 1.0.2"},
+      {:table_rex, "~> 3.1.1"}
     ]
   end
 end

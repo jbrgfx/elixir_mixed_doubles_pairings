@@ -3,13 +3,7 @@ defmodule MixedDoubles do
   Creates random court assignments for mixed doubles pairings
   with wait-lists for as many as four courts.
 
-  The release includes Elixir runtime and the Erlang VM for Windows.
-  To run the release in Windows,
-  open a CMD and execute:
-
-    demo_release\bin\demo.bat start_iex
-
-  Then create a roster using the main command:
+  Create a roster using the main command:
   iex(1) MixedDoubles.assignCourts
   """
 

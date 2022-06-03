@@ -104,7 +104,7 @@ defmodule MixedDoubles do
     players = shuffleFemales() |> Enum.zip(shuffleMales())
     # IO.inspect(players)
     zipped = Enum.zip([1, 1, 2, 2, 3, 3, 4, 4], players)
-    teams = PhStTransform.transform(zipped, %{Tuple => fn tuple -> Tuple.to_list(tuple) end})
+    PhStTransform.transform(zipped, %{Tuple => fn tuple -> Tuple.to_list(tuple) end})
   end
 
   @doc """
@@ -163,10 +163,10 @@ defmodule MixedDoubles do
   Assigns teams to courts and prints rosters as well as waitlists
   """
   def assignCourts do
-    teams = assignTeams()
+    teamsassigned = assignTeams()
 
     header = ["Court", "Team"]
-    TableRex.quick_render!(teams, header, "Assignments") |> IO.puts()
+    TableRex.quick_render!(teamsassigned, header, "Assignments") |> IO.puts()
 
     femaleWaitlist()
     maleWaitlist()

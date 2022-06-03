@@ -4,48 +4,36 @@ Purpose: Build mixed doubles randomly paired rosters for as many as four courts 
 
 ## running using iex
     Clone the repo and in the project directory:
-    
+
     λ mix deps.get
-    λ iex -S mix (mixed_doubles task runs by default)
-    
+    λ iex -S mix mixed_doubles
+    λ iex --werl -S mix mixed_doubles (on windows to get tab-completion in the erlang terminal)
+
     Assign teams to courts and print waitlists:
-    
+
     iex(1) MixedDoubles.assignCourts
-    +----------------------+
-    |       Court 1        |
-    +------+--------+------+
-    |      | Ladies | Men  |
-    +------+--------+------+
-    | Team | Alice  | Jim  |
-    | Team | Carol  | John |
-    +------+--------+------+
-
-    +------------------------+
-    |        Court 2         |
-    +------+---------+-------+
-    |      | Ladies  | Men   |
-    +------+---------+-------+
-    | Team | Dorothy | Kevin |
-    | Team | Beth    | Jim   |
-    +------+---------+-------+
-
-    +-----------------------+
-    |        Court 3        |
-    +------+--------+-------+
-    |      | Ladies | Men   |
-    +------+--------+-------+
-    | Team | Alice  | Jim   |
-    | Team | Kelly  | Rocky |
-    +------+--------+-------+
-
-    +-----------------------+
-    |        Court 4        |
-    +------+--------+-------+
-    |      | Ladies | Men   |
-    +------+--------+-------+
-    | Team | Jane   | Dave  |
-    | Team | Lynda  | Kevin |
-    +------+--------+-------+
+    +-----------------+
+    |   Assignments   |
+    +-------+---------+
+    | Court | Team    |
+    +-------+---------+
+    | 1     | Jane    |
+    |       | Robert  |
+    | 1     | Dorothy |
+    |       | John    |
+    | 2     | Lynda   |
+    |       | Kevin   |
+    | 2     | Carol   |
+    |       | Jim     |
+    | 3     | Barb    |
+    |       | Ben     |
+    | 3     | Alice   |
+    |       | Brian   |
+    | 4     | Beth    |
+    |       | Rocky   |
+    | 4     | Kelly   |
+    |       | Dave    |
+    +-------+---------+
 
     +----------------+
     | Ladies Waiting |
@@ -65,7 +53,7 @@ Purpose: Build mixed doubles randomly paired rosters for as many as four courts 
     +-------------+
 
 
-#### assign Teams 
+#### assign Teams
 
     iex(2) MixedDoubles.assignTeams
 
